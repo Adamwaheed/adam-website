@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Mentoring Program - Adam Waheed</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            line-height: 1.6;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: bold;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+        .gray-text {
+            color: #bbb;
+        }
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .cta-button {
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cta-button:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+        .section {
+            margin: 6rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .curriculum-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .curriculum-list li {
+            margin-bottom: 1rem;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .curriculum-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .price-highlight {
+            background: #000;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0 1rem;
+            }
+            .section {
+                margin: 4rem 0;
+                padding: 0 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="nav-header">
+        <div class="nav-content">
+            <div class="logo">Coding Mentoring</div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="index.html" style="color: #666; text-decoration: none;">← Back to Portfolio</a>
+                <a href="#enroll" class="cta-button">Enroll Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="margin-top: 12rem;">
+        <div>
+            <h1 class="hero-title">
+                <span class="gray-text">Learn to Code</span><br>
+                with Personal<br>
+                Mentoring
+            </h1>
+            <p style="color: #666; font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem;">
+                Join my monthly coding bootcamp where I personally teach and mentor aspiring developers. 
+                From basics to building real projects - with lifetime support and guidance.
+            </p>
+            <div class="price-highlight">
+                Only 900 MVR - Complete Program + Lifetime Mentoring
+            </div>
+            <a href="#curriculum" class="cta-button">View Curriculum</a>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="section">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Program Overview</h2>
+        <p style="color: #666; margin-bottom: 3rem; font-size: 1.1rem;">A comprehensive 15-day intensive program that starts every month on the 10th</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-title">
+                    <div class="feature-icon">📅</div>
+                    Schedule & Format
+                </div>
+                <ul class="curriculum-list">
+                    <li>Program starts every month on the 10th</li>
+                    <li>15 days of intensive practical learning</li>
+                    <li>Daily classes: 8:40 PM to 9:40 PM</li>
+                    <li>Live sessions via Google Meet</li>
+                    <li>All classes are recorded for review</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-title">
+                    <div class="feature-icon">💻</div>
+                    What You'll Learn
+                </div>
+                <ul class="curriculum-list">
+                    <li><strong>HTML</strong> - Structure and markup</li>
+                    <li><strong>CSS</strong> - Styling and responsive design</li>
+                    <li><strong>PHP</strong> - Server-side programming</li>
+                    <li><strong>MySQL</strong> - Database management</li>
+                    <li><strong>Git</strong> - Version control and collaboration</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-title">
+                    <div class="feature-icon">🎯</div>
+                    Practical Approach
+                </div>
+                <ul class="curriculum-list">
+                    <li>Hands-on projects from day one</li>
+                    <li>Build real-world applications</li>
+                    <li>Learn industry best practices</li>
+                    <li>Code reviews and feedback</li>
+                    <li>Portfolio development guidance</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-title">
+                    <div class="feature-icon">🤝</div>
+                    Lifetime Support
+                </div>
+                <ul class="curriculum-list">
+                    <li>Mentoring and guidance for life</li>
+                    <li>Complete learning path direction</li>
+                    <li>Ongoing support for any issues</li>
+                    <li>Career guidance and advice</li>
+                    <li>Industry updates and trends</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="section" id="curriculum">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">15-Day Curriculum</h2>
+        <p style="color: #666; margin-bottom: 3rem; font-size: 1.1rem;">From zero to building complete web applications</p>
+        
+        <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 1: Foundation</h3>
+                    <ul class="curriculum-list">
+                        <li>HTML fundamentals</li>
+                        <li>CSS styling basics</li>
+                        <li>Responsive design</li>
+                        <li>Building your first website</li>
+                        <li>Git version control basics</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 2: Programming</h3>
+                    <ul class="curriculum-list">
+                        <li>PHP programming fundamentals</li>
+                        <li>Working with forms and data</li>
+                        <li>MySQL database design</li>
+                        <li>Connecting PHP with MySQL</li>
+                        <li>Building dynamic websites</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 3: Projects</h3>
+                    <ul class="curriculum-list">
+                        <li>Complete web application project</li>
+                        <li>User authentication systems</li>
+                        <li>Advanced Git workflows</li>
+                        <li>Code optimization</li>
+                        <li>Deployment and hosting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Mentor -->
+    <section class="section">
+        <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: #333;">About Your Mentor</h2>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                Hi! I'm Adam Waheed, a software developer with <strong>15 years of experience</strong>. I've taught over 
+                <strong>100+ students</strong> and helped them launch successful careers in tech.
+            </p>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+                My approach is practical and supportive - I believe in learning by doing, and I'm committed to 
+                your success not just during the program, but throughout your entire coding journey.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
+                    15+ Years Experience
+                </div>
+                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
+                    100+ Students Taught
+                </div>
+                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
+                    Enterprise Software Developer
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment -->
+    <section class="section" id="enroll">
+        <div style="background: #000; color: white; border-radius: 16px; padding: 3rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: white;">Ready to Start Your Coding Journey?</h2>
+            <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 1rem;">
+                Next program starts on the <strong style="color: white;">10th of every month</strong>
+            </p>
+            <div class="price-highlight" style="background: white; color: black; font-size: 1.3rem; margin: 2rem 0;">
+                Only 900 MVR - Complete Program + Lifetime Mentoring
+            </div>
+            <p style="color: #ccc; margin-bottom: 2rem;">
+                Includes recorded classes, live mentoring, and lifelong career support
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:adamwaheed@gmail.com?subject=Coding Mentoring Program Enrollment" style="background: white; color: black; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                    📧 Enroll Now
+                </a>
+                <a href="tel:+9607905798" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                    📞 Call to Discuss
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #999; padding: 2rem 0; text-align: center;">
+        <div class="nav-content">
+            <p>Hello World© Pvt Ltd - 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
