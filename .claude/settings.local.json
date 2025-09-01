@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/adamwaheed/Desktop/**)",
+      "Read(/Users/adamwaheed/Desktop/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
