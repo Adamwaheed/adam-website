@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProHR - Complete HR Management Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fafafa;
+            line-height: 1.6;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: bold;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+        .gray-text {
+            color: #bbb;
+        }
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .cta-button {
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cta-button:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+        .section {
+            margin: 6rem 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+        }
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .module-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+        }
+        .module-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .module-icon {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-list li {
+            margin-bottom: 1rem;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .client-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .client-card:hover {
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 0 1rem;
+            }
+            .section {
+                margin: 4rem 0;
+                padding: 0 1rem;
+            }
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="nav-header">
+        <div class="nav-content">
+            <div class="logo">ProHR</div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="index.html" style="color: #666; text-decoration: none;">← Back to Portfolio</a>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="section" style="margin-top: 12rem;">
+        <div>
+            <h1 class="hero-title">
+                <span class="gray-text">ProHR</span> - Complete<br>
+                HR Management<br>
+                Solution
+            </h1>
+            <p style="color: #666; font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem;">
+                Powerful HR software trusted by major organizations across Maldives. 
+                From employee management to payroll automation - everything you need in one platform.
+            </p>
+            <a href="#modules" class="cta-button">Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Trusted Clients -->
+    <section class="section">
+        <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Trusted by Leading Organizations</h2>
+        <p style="color: #666; margin-bottom: 2rem;">Currently powering HR operations across major institutions in Maldives</p>
+        <div class="client-grid">
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">All Courts of Maldives</div>
+                <p style="color: #666; font-size: 0.9rem;">Judicial System</p>
+            </div>
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">STELCO</div>
+                <p style="color: #666; font-size: 0.9rem;">State Electric Company</p>
+            </div>
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">Maldives Ports Limited</div>
+                <p style="color: #666; font-size: 0.9rem;">Port Operations</p>
+            </div>
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">Male City Council</div>
+                <p style="color: #666; font-size: 0.9rem;">Local Government</p>
+            </div>
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">Big Fish</div>
+                <p style="color: #666; font-size: 0.9rem;">Private Sector</p>
+            </div>
+            <div class="client-card">
+                <div style="font-weight: bold; color: #333; margin-bottom: 0.5rem;">The Hawks Maldives</div>
+                <p style="color: #666; font-size: 0.9rem;">Sports Organization</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="section" id="modules">
+        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Complete HR Modules</h2>
+        <p style="color: #666; margin-bottom: 3rem; font-size: 1.1rem;">Everything you need to manage your workforce efficiently</p>
+        
+        <div class="module-grid">
+            <!-- Employee Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">👥</div>
+                    Employee Module
+                </div>
+                <ul class="feature-list">
+                    <li>Unified employee management platform</li>
+                    <li>Comprehensive employee dashboard</li>
+                    <li>Flexible allowances management</li>
+                    <li>Streamlined promotion/demotion process</li>
+                    <li>Employee termination workflows</li>
+                    <li>Finance documentation management</li>
+                    <li>Centralized document management</li>
+                    <li>Employee self-service portal</li>
+                </ul>
+            </div>
+
+            <!-- Attendance Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">⏰</div>
+                    Attendance Module
+                </div>
+                <ul class="feature-list">
+                    <li>Automated attendance tracking</li>
+                    <li>Device integration (in-office & remote)</li>
+                    <li>Easy approval workflows</li>
+                    <li>Flexible shift management</li>
+                    <li>Work from anywhere support</li>
+                </ul>
+            </div>
+
+            <!-- Leave Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">🏖️</div>
+                    Leave Module
+                </div>
+                <ul class="feature-list">
+                    <li>Customizable leave types with rules</li>
+                    <li>Employee self-service applications</li>
+                    <li>Clear leave overview timeline</li>
+                    <li>Leave accumulation & carryforward</li>
+                    <li>Hierarchical approval workflows</li>
+                </ul>
+            </div>
+
+            <!-- Payroll Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">💰</div>
+                    Payroll Module
+                </div>
+                <ul class="feature-list">
+                    <li>Fully automated payroll processing</li>
+                    <li>Automatic calculations with company policies</li>
+                    <li>Instantaneous payroll generation</li>
+                    <li>Employee self-service pay slips</li>
+                    <li>Multi-bank support</li>
+                    <li>Advanced security & encryption</li>
+                </ul>
+            </div>
+
+            <!-- Appraisal Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">⭐</div>
+                    Appraisal Module
+                </div>
+                <ul class="feature-list">
+                    <li>Customizable appraisal templates</li>
+                    <li>360-degree feedback system</li>
+                    <li>Goal setting and tracking</li>
+                    <li>Comprehensive performance metrics</li>
+                    <li>Historical performance data</li>
+                </ul>
+            </div>
+
+            <!-- Recruitment Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">🎯</div>
+                    Recruitment Module
+                </div>
+                <ul class="feature-list">
+                    <li>Job posting on company portal</li>
+                    <li>Comprehensive applicant tracking</li>
+                    <li>Automated interview scheduling</li>
+                    <li>Candidate evaluation tools</li>
+                    <li>Reporting and analytics</li>
+                </ul>
+            </div>
+
+            <!-- Disciplinary Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">⚖️</div>
+                    Disciplinary Module
+                </div>
+                <ul class="feature-list">
+                    <li>Policy enforcement framework</li>
+                    <li>Incident reporting system</li>
+                    <li>Range of disciplinary actions</li>
+                    <li>Consistent and fair processes</li>
+                </ul>
+            </div>
+
+            <!-- Shift Management -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">🔄</div>
+                    Shift Management
+                </div>
+                <ul class="feature-list">
+                    <li>Comprehensive shift scheduling</li>
+                    <li>Automated scheduling based on availability</li>
+                    <li>Employee shift swapping</li>
+                    <li>Time and attendance tracking</li>
+                </ul>
+            </div>
+
+            <!-- Overtime Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">⏱️</div>
+                    Overtime Module
+                </div>
+                <ul class="feature-list">
+                    <li>Accurate overtime tracking</li>
+                    <li>Automated overtime calculations</li>
+                    <li>Pre-overtime request system</li>
+                    <li>Approval workflow management</li>
+                </ul>
+            </div>
+
+            <!-- Approval Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">✅</div>
+                    Approval Module
+                </div>
+                <ul class="feature-list">
+                    <li>Customizable approval workflows</li>
+                    <li>Automated notifications</li>
+                    <li>Mobile access for approvals</li>
+                    <li>Streamlined approval processes</li>
+                </ul>
+            </div>
+
+            <!-- Company Settings -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">⚙️</div>
+                    Company Settings
+                </div>
+                <ul class="feature-list">
+                    <li>Overtime limits configuration</li>
+                    <li>Company branding customization</li>
+                    <li>Custom formula configuration</li>
+                    <li>Policy alignment tools</li>
+                </ul>
+            </div>
+
+            <!-- Reports Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">📊</div>
+                    Reports Module
+                </div>
+                <ul class="feature-list">
+                    <li>Customizable report generation</li>
+                    <li>Real-time data access</li>
+                    <li>Advanced analytics with charts</li>
+                    <li>Data filtering and sorting</li>
+                    <li>Scheduled report delivery</li>
+                </ul>
+            </div>
+
+            <!-- Task Module -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">📋</div>
+                    Task Module
+                </div>
+                <ul class="feature-list">
+                    <li>Task creation and assignment</li>
+                    <li>Deadline management</li>
+                    <li>Progress tracking</li>
+                    <li>Team collaboration tools</li>
+                </ul>
+            </div>
+
+            <!-- Mobile App -->
+            <div class="module-card">
+                <div class="module-title">
+                    <div class="module-icon">📱</div>
+                    Mobile App
+                </div>
+                <ul class="feature-list">
+                    <li>Full mobile access to HR functions</li>
+                    <li>Real-time notifications</li>
+                    <li>Employee self-service portal</li>
+                    <li>Advanced security features</li>
+                    <li>Intuitive user interface</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Ready to Transform Your HR?</h2>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+                Join leading organizations in Maldives who trust ProHR for their complete HR management needs.
+            </p>
+            <div style="margin-bottom: 2rem;">
+                <p style="color: #333; font-size: 1.1rem; margin-bottom: 0.5rem;">Contact Adam Waheed</p>
+                <p style="color: #666;">hello@adamwaheed.dev</p>
+            </div>
+            <a href="mailto:hello@adamwaheed.dev?subject=ProHR Inquiry" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #999; padding: 2rem 0; text-align: center;">
+        <div class="nav-content">
+            <p>Hello World© Pvt Ltd - 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
