@@ -9,100 +9,137 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #fafafa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
         .hero-title {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: bold;
             line-height: 0.9;
             margin-bottom: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .gray-text {
-            color: #bbb;
+            color: #888;
         }
         .nav-header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(250, 250, 250, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
         .nav-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .cta-button {
-            background: #000;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             border-radius: 50px;
             padding: 0.75rem 1.5rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
         .cta-button:hover {
-            background: #333;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        .cta-button-white {
+            background: white;
+            color: #667eea;
+            border: 2px solid white;
+            font-weight: 600;
+        }
+        .cta-button-white:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
         }
         .section {
-            margin: 6rem 0;
+            margin: 4rem 0;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
+        }
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            margin-top: 8rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
         }
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
         .feature-card {
-            background: white;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: transform 0.2s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         .feature-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
         .feature-title {
             font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             color: #333;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
         }
         .feature-icon {
-            width: 40px;
-            height: 40px;
-            background: #f0f0f0;
-            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         .curriculum-list {
             list-style: none;
@@ -113,34 +150,220 @@
             margin-bottom: 1rem;
             color: #666;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
+            font-size: 1rem;
         }
         .curriculum-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
+            top: 0;
             color: #22c55e;
             font-weight: bold;
+            width: 20px;
+            height: 20px;
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
         }
         .price-highlight {
-            background: #000;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
             display: inline-block;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
         }
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #333, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .curriculum-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin: 4rem 0;
+        }
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .curriculum-week {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .curriculum-week::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        .week-title {
+            color: #333;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mentor-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            margin: 4rem 0;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        .enroll-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin: 4rem 0;
+        }
+        .button-grid {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-content {
                 padding: 0 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-header {
+                padding: 1.5rem 0;
             }
             .section {
-                margin: 4rem 0;
+                margin: 2rem 0;
                 padding: 0 1rem;
+            }
+            .hero-section {
+                margin-top: 6rem;
+                padding: 2.5rem 1.5rem;
+                border-radius: 16px;
             }
             .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .feature-card {
+                padding: 2rem 1.5rem;
+                border-radius: 16px;
+            }
+            .curriculum-section {
+                padding: 2.5rem 1.5rem;
+                border-radius: 16px;
+            }
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .mentor-section {
+                padding: 2.5rem 1.5rem;
+                border-radius: 16px;
+            }
+            .enroll-section {
+                padding: 2.5rem 1.5rem;
+                border-radius: 16px;
+            }
+            .stats-grid {
+                gap: 1rem;
+            }
+            .stat-item {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+            .button-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+            .hero-title {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+            .section-title {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+            .feature-card {
+                padding: 1.5rem 1rem;
+            }
+            .curriculum-section {
+                padding: 2rem 1rem;
+            }
+            .mentor-section {
+                padding: 2rem 1rem;
+            }
+            .enroll-section {
+                padding: 2rem 1rem;
+            }
+            .price-highlight {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
             }
         }
     </style>
@@ -158,14 +381,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="section" style="margin-top: 12rem;">
-        <div>
+    <section class="section">
+        <div class="hero-section">
             <h1 class="hero-title">
                 <span class="gray-text">Learn to Code</span><br>
                 with Personal<br>
                 Mentoring
             </h1>
-            <p style="color: #666; font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem;">
+            <p style="color: #666; font-size: 1.2rem; margin-bottom: 2rem;">
                 Join my monthly coding bootcamp where I personally teach and mentor aspiring developers. 
                 From basics to building real projects - with lifetime support and guidance.
             </p>
@@ -178,8 +401,8 @@
 
     <!-- Program Overview -->
     <section class="section">
-        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Program Overview</h2>
-        <p style="color: #666; margin-bottom: 3rem; font-size: 1.1rem;">A comprehensive 15-day intensive program that starts every month on the 10th</p>
+        <h2 class="section-title">Program Overview</h2>
+        <p class="section-subtitle">A comprehensive 15-day intensive program that starts every month on the 10th</p>
         
         <div class="feature-grid">
             <div class="feature-card">
@@ -242,13 +465,13 @@
 
     <!-- Curriculum Section -->
     <section class="section" id="curriculum">
-        <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">15-Day Curriculum</h2>
-        <p style="color: #666; margin-bottom: 3rem; font-size: 1.1rem;">From zero to building complete web applications</p>
-        
-        <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div>
-                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 1: Foundation</h3>
+        <div class="curriculum-section">
+            <h2 class="section-title">15-Day Curriculum</h2>
+            <p class="section-subtitle">From zero to building complete web applications</p>
+            
+            <div class="curriculum-grid">
+                <div class="curriculum-week">
+                    <h3 class="week-title">Week 1: Foundation</h3>
                     <ul class="curriculum-list">
                         <li>HTML fundamentals</li>
                         <li>CSS styling basics</li>
@@ -258,8 +481,8 @@
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 2: Programming</h3>
+                <div class="curriculum-week">
+                    <h3 class="week-title">Week 2: Programming</h3>
                     <ul class="curriculum-list">
                         <li>PHP programming fundamentals</li>
                         <li>Working with forms and data</li>
@@ -269,8 +492,8 @@
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 style="color: #333; font-weight: bold; margin-bottom: 1rem;">Week 3: Projects</h3>
+                <div class="curriculum-week">
+                    <h3 class="week-title">Week 3: Projects</h3>
                     <ul class="curriculum-list">
                         <li>Complete web application project</li>
                         <li>User authentication systems</li>
@@ -285,48 +508,42 @@
 
     <!-- About Mentor -->
     <section class="section">
-        <div style="background: white; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
-            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: #333;">About Your Mentor</h2>
-            <p style="color: #666; font-size: 1.1rem; margin-bottom: 1.5rem;">
+        <div class="mentor-section">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">About Your Mentor</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">
                 Hi! I'm Adam Waheed, a software developer with <strong>15 years of experience</strong>. I've taught over 
                 <strong>100+ students</strong> and helped them launch successful careers in tech.
             </p>
-            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">
                 My approach is practical and supportive - I believe in learning by doing, and I'm committed to 
                 your success not just during the program, but throughout your entire coding journey.
             </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
-                    15+ Years Experience
-                </div>
-                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
-                    100+ Students Taught
-                </div>
-                <div style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: #666;">
-                    Enterprise Software Developer
-                </div>
+            <div class="stats-grid">
+                <div class="stat-item">15+ Years Experience</div>
+                <div class="stat-item">100+ Students Taught</div>
+                <div class="stat-item">Enterprise Software Developer</div>
             </div>
         </div>
     </section>
 
     <!-- Enrollment -->
     <section class="section" id="enroll">
-        <div style="background: #000; color: white; border-radius: 16px; padding: 3rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-            <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: white;">Ready to Start Your Coding Journey?</h2>
-            <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 1rem;">
-                Next program starts on the <strong style="color: white;">10th of every month</strong>
+        <div class="enroll-section">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Ready to Start Your Coding Journey?</h2>
+            <p style="color: #666; font-size: 1.2rem; margin-bottom: 1rem;">
+                Next program starts on the <strong style="color: #333;">10th of every month</strong>
             </p>
-            <div class="price-highlight" style="background: white; color: black; font-size: 1.3rem; margin: 2rem 0;">
+            <div class="price-highlight">
                 Only 900 MVR - Complete Program + Lifetime Mentoring
             </div>
-            <p style="color: #ccc; margin-bottom: 2rem;">
+            <p style="color: #666; margin-bottom: 2rem;">
                 Includes recorded classes, live mentoring, and lifelong career support
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:adamwaheed@gmail.com?subject=Coding Mentoring Program Enrollment" style="background: white; color: black; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+            <div class="button-grid">
+                <a href="mailto:adamwaheed@gmail.com?subject=Coding Mentoring Program Enrollment" class="cta-button">
                     📧 Enroll Now
                 </a>
-                <a href="tel:+9607905798" style="background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
+                <a href="tel:+9607905798" class="cta-button cta-button-white">
                     📞 Call to Discuss
                 </a>
             </div>

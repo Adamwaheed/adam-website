@@ -231,13 +231,26 @@
             gap: 4rem;
             align-items: start;
         }
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
             .nav-content {
                 padding: 0 1rem;
             }
+            .nav-header {
+                padding: 1rem 0;
+            }
             .section {
-                margin: 4rem 0;
+                margin: 3rem 0;
                 padding: 0 1rem;
+            }
+            /* Reduce top margin for hero section on mobile */
+            .section:first-of-type {
+                margin-top: 4rem;
+            }
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 4rem);
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
             }
             .about-content {
                 grid-template-columns: 1fr;
@@ -247,12 +260,193 @@
                 gap: 0.5rem;
             }
             .cta-button {
+                padding: 0.75rem 1.25rem;
+                font-size: 0.9rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .project-card {
+                padding: 2rem 1.5rem;
+            }
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+            .social-links {
+                justify-content: center;
+                gap: 0.75rem;
+            }
+            .social-link {
                 padding: 0.6rem 1.2rem;
                 font-size: 0.9rem;
+            }
+            /* Hero section buttons stacked on mobile */
+            .hero-title + p + div {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+            .hero-title + p + div a {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                margin: 2rem 0;
+                padding: 0 0.75rem;
+            }
+            .hero-title {
+                font-size: clamp(1.8rem, 7vw, 3rem);
+                margin-bottom: 1rem;
+            }
+            .project-card {
+                padding: 1.5rem 1rem;
+            }
+            .contact-card {
+                padding: 1.5rem 1rem;
+            }
+            .social-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .menu-button {
+                padding: 0.5rem;
             }
         }
         .smooth-scroll {
             scroll-behavior: smooth;
+        }
+        .featured-products {
+            padding: 4rem 0;
+            margin: 6rem 0;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .products-grid.expanded {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .product-card {
+            border-radius: 24px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .product-card.hr-card {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+        }
+        .product-card.stock-card {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            color: #1f2937;
+        }
+        .product-card.council-card {
+            background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%);
+            color: white;
+        }
+        .product-card.wide-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: #1f2937;
+        }
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .product-desc {
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        .product-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 120px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .product-icon {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            opacity: 0.2;
+        }
+        .product-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            backdrop-filter: blur(10px);
+        }
+        .product-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .featured-products {
+                padding: 3rem 0;
+                margin: 3rem 0;
+            }
+            .products-grid,
+            .products-grid.expanded {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .product-card {
+                padding: 2.5rem;
+            }
+            .product-card.wide-card {
+                grid-column: span 1;
+            }
+            .product-stats {
+                gap: 1.5rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .product-icon {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
@@ -283,6 +477,7 @@
             <button class="close-menu" onclick="closeMenu()">×</button>
         </div>
         <ul class="menu-links">
+            <li><a href="#products" onclick="closeMenu()">Software Solutions</a></li>
             <li><a href="#about" onclick="closeMenu()">About</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
@@ -307,18 +502,158 @@
             <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin-bottom: 2rem;">
                 Ready to bring your ideas to life? Let's discuss your project.
             </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                 <a href="#contact" class="cta-button">Let's Talk →</a>
-                <a href="hr-software.html" style="background: #000; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
-                    🏢 View ProHR Software
-                </a>
-                <a href="mentoring.html" style="background: #22c55e; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
-                    🎓 Coding Mentoring
+                <a href="#products" style="background: white; color: #333; border: 2px solid #ddd; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                    View My Software Solutions
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Featured Products Section -->
+    <section class="section" id="products">
+        <div class="featured-products">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; color: #333;">Trusted Enterprise Solutions</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Complete software solutions powering major organizations across the Maldives
+                </p>
+            </div>
+            
+            <div class="products-grid expanded">
+                <div class="product-card hr-card">
+                    <h3 class="product-title">Transform HR operations with ProHR</h3>
+                    <p class="product-desc">
+                        Complete HR solution trusted by major organizations including All Courts of Maldives, STELCO, and Maldives Ports Limited.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">14+</div>
+                            <div class="stat-label">integrated modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">major organizations</div>
+                        </div>
+                    </div>
+                    <a href="hr-software.html" class="product-button">
+                        Explore ProHR →
+                    </a>
+                    <span class="product-icon">🏢</span>
+                </div>
+
+                <div class="product-card stock-card">
+                    <h3 class="product-title">Complete Asset & Inventory Control</h3>
+                    <p class="product-desc">
+                        Advanced Stock Management with real-time tracking, barcode generation, and automated workflows.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">core modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">automated tracking</div>
+                        </div>
+                    </div>
+                    <a href="stock-management.html" class="product-button">
+                        View Features →
+                    </a>
+                    <span class="product-icon">📦</span>
+                </div>
+
+                <div class="product-card council-card">
+                    <h3 class="product-title">Digital Municipal Administration</h3>
+                    <p class="product-desc">
+                        Complete council management with citizen registration, interactive mapping, and automated billing systems.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">7</div>
+                            <div class="stat-label">management modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">SVG</div>
+                            <div class="stat-label">interactive mapping</div>
+                        </div>
+                    </div>
+                    <a href="council-management.html" class="product-button">
+                        Learn More →
+                    </a>
+                    <span class="product-icon">🏛️</span>
+                </div>
+
+                <div class="product-card" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: #1f2937;">
+                    <h3 class="product-title">SME Accounting Made Simple</h3>
+                    <p class="product-desc">
+                        Complete accounting solution designed for small businesses, cafés, and shops with mobile-first design and simplified workflows.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">9</div>
+                            <div class="stat-label">core modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">mobile optimized</div>
+                        </div>
+                    </div>
+                    <a href="sme-accounting.html" class="product-button">
+                        View SME Solution →
+                    </a>
+                    <span class="product-icon">💼</span>
+                </div>
+
+                <div class="product-card" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); color: white;">
+                    <h3 class="product-title">Complete Garage Management</h3>
+                    <p class="product-desc">
+                        Integrated vehicle service center solution with quotations, billing, inventory, and accounting for automotive businesses.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">core modules</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">workflow integration</div>
+                        </div>
+                    </div>
+                    <a href="garage-management.html" class="product-button">
+                        View Garage System →
+                    </a>
+                    <span class="product-icon">🚗</span>
+                </div>
+
+                <div class="product-card wide-card">
+                    <h3 class="product-title">The complete software development ecosystem</h3>
+                    <p class="product-desc">
+                        With 15 years of experience, proven enterprise solutions, and personalized mentoring services, I provide comprehensive software development support from conception to deployment.
+                    </p>
+                    <div class="product-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">years experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">students mentored</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">enterprise solutions</div>
+                        </div>
+                    </div>
+                    <a href="mentoring.html" class="product-button">
+                        🎓 View Mentoring Services
+                    </a>
+                    <span class="product-icon">💻</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section class="section" id="about">
